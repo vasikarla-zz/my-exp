@@ -7,7 +7,9 @@ app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
     res.render('home.hbs', {
-        name: "Raj Vasikarla"
+        pageTitle: "Home Page",
+        name: "Raj Vasikarla",
+        year: new Date().getFullYear()
     });
 });
 
