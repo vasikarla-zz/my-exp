@@ -3,6 +3,13 @@ var app = express();
 const hbs = require('hbs');
 
 app.use(express.static(__dirname + '/public'));
+
+app.use((req, res, next) => {
+    var now = new Date().toString();
+    console.log(`${now}`);
+    next();
+});
+
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear', new Date().getFullYear());
 hbs.registerHelper('screamIt', (input) => {
