@@ -1,11 +1,14 @@
 const express = require('express');
 var app = express();
+const hbs = require('hbs');
 
 app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-    res.send("Hello World!");
-    console.log("This is my First Message");
+    res.render('home.hbs', {
+        name: "Raj Vasikarla"
+    });
 });
 
 app.get('/bad', (req, res) => {
@@ -15,7 +18,10 @@ app.get('/bad', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.send("This is About Page");
+    res.render('about.hbs', {
+        pageTitle: "About Page from HBS",
+        year: new Date().getFullYear()
+    });
 });
 
 app.listen(3000);
