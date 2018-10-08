@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use((req, res, next) => {
     var now = new Date().toString();
-    var log = `${now} : ${req.method} : ${req.path}`;
+    var log = `[${now}] : ${req.method} : ${req.path}`;
     fs.appendFile('./server.log', log + '\n', (err) => {
         if (err) {
             console.log("Error");
