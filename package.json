@@ -1,0 +1,11 @@
+{
+  "name": "my-exp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vasikarla/my-exp.git",
+  "author": "Raj Vasikarla <raj_vasikarla@intuit.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
