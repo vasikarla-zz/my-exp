@@ -6,4 +6,14 @@ app.get('/', (req, res) => {
     console.log("This is my First Message");
 });
 
+app.get('/bad', (req, res) => {
+    res.send({
+        reason: "Unable to process your request"
+    });
+});
+
+app.get('/about', (req, res) => {
+    res.send("This is About Page");
+});
+
 app.listen(3000);
