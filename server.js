@@ -4,7 +4,11 @@ const hbs = require('hbs');
 
 app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/views/partials');
-hbs.registerHelper('getCurrentYear', new Date().getFullYear())
+hbs.registerHelper('getCurrentYear', new Date().getFullYear());
+hbs.registerHelper('screamIt', (input) => {
+    return input.toUpperCase();
+});
+
 app.set('view engine', 'hbs');
 
 app.get('/home', (req, res) => {
