@@ -15,10 +15,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use((req, res, next) => {
-//     res.render('maintainance.hbs');
-// });
-
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear', new Date().getFullYear());
 hbs.registerHelper('screamIt', (input) => {
@@ -39,6 +35,12 @@ app.get('/home', (req, res) => {
 app.get('/bad', (req, res) => {
     res.send({
         reason: "Unable to process your request"
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('user.hbs', {
+        pageTitle: "User Details"
     });
 });
 
