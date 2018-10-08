@@ -4,9 +4,10 @@ const hbs = require('hbs');
 
 app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper('getCurrentYear', new Date().getFullYear())
 app.set('view engine', 'hbs');
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.render('home.hbs', {
         pageTitle: "Home Page",
         name: "Raj Vasikarla",
@@ -22,8 +23,7 @@ app.get('/bad', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        pageTitle: "About Page from HBS",
-        year: new Date().getFullYear()
+        pageTitle: "About Page from HBS"
     });
 });
 
