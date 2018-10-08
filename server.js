@@ -16,6 +16,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use((req, res, next) => {
+    res.render('maintainance.hbs');
+});
+
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear', new Date().getFullYear());
 hbs.registerHelper('screamIt', (input) => {
